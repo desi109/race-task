@@ -11,13 +11,12 @@ then
     echo 1 > numbers_race
 fi
 
-
 echo "Repeat 100 times - read and increase last number"
 for i in `seq 1 100`;
 do
 	#Read and increase last number
 	LASTNUM=`tail -1 numbers_race`
-	LASTNUM=$((LASTNUM+1))
+	LASTNUM=$((LASTNUM + 1))
 
 	echo $LASTNUM >> numbers_race
 done
@@ -56,14 +55,13 @@ then
 fi
 
 echo "Lock numbers_no_race and do not let interruption"
-if ln numbers_no_race numbers_no_race.lock
-	then                                                                    
-	echo "Repeat 100 times - read and increase last number"
+if ln numbers_no_race numbers_no_race.lock; then                   
+        echo "Repeat 100 times - read and increase last number"
 	for i in `seq 1 100`;
 	do
 		#Read and increase last number
 		LASTNUM=`tail -1 numbers_no_race`
-		LASTNUM=$((LASTNUM+1))
+		LASTNUM=$((LASTNUM + 1))
 
 		echo $LASTNUM >> numbers_no_race
 	done
