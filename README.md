@@ -16,6 +16,7 @@ each accessing the same file.
 
 
 <br>
+
 Solution
 -----------------------------------------------------------------
 1. Steps to get the project:
@@ -45,12 +46,15 @@ sh clear.sh
 ```
 
 <br>
+
 The race condition occurs when two or more threads are able to access shared data and they try to change it at the same time. 
 <br>
 <br>
+
 The thread scheduling algorithm can swap between threads at any time, because of that we cannot know the order in which the threads will attempt to access the shared data. Therefore, the result of the change in data dependents on the thread scheduling algorithm.
 <br>
 <br>
+
 By starting race_start.sh, we can see that both threads are ‘racing’ to access or change the data. Problem occur when:
 
 - first thread does a `check-then-act`:
@@ -58,14 +62,17 @@ By starting race_start.sh, we can see that both threads are ‘racing’ to acce
 2. then `act-1` (increase `LASTNUM` and add it to `numbers_race` file)
 <br>
 <br>
+
 - second thread does `check-2` and `act-2` to the value in `numbers_race` between the `check-1` and the `act-1` 
 <br>
 <br>
 <br>
+
 ***Question:***  How long does it take before a race condition manifests itself?<br>
 ***Answer:***  The race condition occurs when two or more threads are able to access shared data and they try to change it at the same time. 
 <br>
 <br>
+
 ***Question:***  What is the critical section?<br>
 ***Answer:*** A critical section/region is that part of the program where the shared  memory is accessed.
 
@@ -77,6 +84,7 @@ The solution for the described problem will be to use
 
 <br>
 <br>
+
 It is good to trace the whole process, so in order to do that, there is some simple logging, which will be displayed when the program is started.
 
 ```
