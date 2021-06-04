@@ -6,7 +6,7 @@ echo '#!/bin/bash
 
 echo "--> Start race.sh"                                                         
 if test ! -f numbers_race
-then
+    then
     echo "Create the numbers_race file"  
     echo 1 > numbers_race
 fi
@@ -55,7 +55,8 @@ then
 fi
 
 echo "Lock numbers_no_race and do not let interruption"
-if ln numbers_no_race numbers_no_race.lock; then                   
+if ln numbers_no_race numbers_no_race.lock
+        then                   
         echo "Repeat 100 times - read and increase last number"
 	for i in `seq 1 100`;
 	do
