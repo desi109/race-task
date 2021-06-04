@@ -36,7 +36,7 @@ echo "\n...Start the two race programs at same time to see the race"
 sh race.sh &
 sh race.sh
 
-wait
+sleep 3s
 
 echo "...Stop the two race programs at same time to see the race"
 exit 0' > race_start.sh
@@ -85,7 +85,7 @@ echo "\n...Start the two no_race programs at same time"
 sh no_race.sh &
 sh no_race.sh
 
-wait
+sleep 3s
 echo "...Stop the two no_race programs at same time" 
 
 exit 0' > no_race_start.sh
